@@ -1,3 +1,4 @@
 # Dot files
 
-My dot files
+`dev-run` - configures the development environment
+`run` - executes installation scripts
