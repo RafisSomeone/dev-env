@@ -1,4 +1,6 @@
 --[[
+--
+--
 
 =====================================================================
 ==================== READ THIS BEFORE CONTINUING ====================
@@ -1001,3 +1003,7 @@ require("lazy").setup({
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
 vim.cmd.colorscheme("tokyonight")
+vim.opt.expandtab = true
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
