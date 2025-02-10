@@ -16,6 +16,11 @@ enable-normalization-opposite-orientation-for-nested-containers = true
         activate
     end tell'
     '''
+    alt-h = '''exec-and-forget osascript -e '
+    tell application "obsidian"
+        activate
+    end tell'
+    '''
 
     alt-t = '''exec-and-forget osascript -e '
     tell application "Ghostty"
