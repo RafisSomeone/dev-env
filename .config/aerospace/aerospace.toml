@@ -33,6 +33,12 @@ enable-normalization-opposite-orientation-for-nested-containers = true
         activate
     end tell'
     '''
+    
+    alt-g = '''exec-and-forget osascript -e '
+    tell application "Spotify"
+        activate
+    end tell'
+    '''
 
     alt-m = '''exec-and-forget osascript -e '
     tell application "Mail"
@@ -82,10 +88,14 @@ if.app-id = 'com.apple.iCal'
 run = ['layout floating']
 
 [[on-window-detected]]
-if.app-id = 'com.apple.iCal'
+if.app-id = 'com.hnc.Discord'
 run = ['layout floating']
 
 [[on-window-detected]]
-if.app-id = 'com.hnc.Discord'
+if.app-id = 'com.spotify.client'
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'md.obsidian'
 run = ['layout floating']
 
