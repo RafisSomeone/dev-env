@@ -1,23 +1,19 @@
-version="v0.10.2"
-if [ ! -z $NVIM_VERSION ]; then
-    version="$NVIM_VERSION"
-fi
-
+version="${NVIM_VERSION:-v0.11.5}"
 echo "version: \"$version\""
 
-if [ ! -d $HOME/neovim ]; then
-    git clone https://github.com/neovim/neovim.git $HOME/neovim
+if [ ! -d "$HOME/neovim" ]; then
+  git clone https://github.com/neovim/neovim.git "$HOME/neovim"
 fi
 
-brew install cmake 
-brew install gettext 
-brew install lua5.1 
-brew install liblua5.1
+brew install cmake gettext lua5.1 liblua5.1
 
-git -C ~/neovim fetch --all
-git -C ~/neovim checkout $version
+cd "$HOME/neovim"
 
-make -C ~/neovim clean
-make -C ~/neovim CMAKE_BUILD_TYPE=RelWithDebInfo
-sudo make -C ~/neovim install
+git fetch --all --tags
+git checkout "$version"
+
+rm -rf .deps build        # <- important part
+
+make CMAKE_BUILD_TYPE=RelWithDebInfo
+sudo make install
 

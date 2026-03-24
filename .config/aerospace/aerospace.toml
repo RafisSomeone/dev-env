@@ -8,8 +8,11 @@ enable-normalization-flatten-containers = true
 enable-normalization-opposite-orientation-for-nested-containers = true
 
 [mode.main.binding]
-    alt-p = '''exec-and-forget aerospace move-node-to-monitor --focus-follows-window --wrap-around next && aerospace fullscreen'''
     alt-f = '''fullscreen'''
+    alt-p = [
+      'move-node-to-monitor --focus-follows-window --wrap-around next',
+      'fullscreen'
+    ]
 
     alt-j = '''exec-and-forget osascript -e '
     tell application "Google Chrome"
@@ -98,4 +101,5 @@ run = ['layout floating']
 [[on-window-detected]]
 if.app-id = 'md.obsidian'
 run = ['layout floating']
+
 
